@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>EE317BA9-6F14-484F-90C5-C2B2BDDADB1D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>watm</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9BE46582-A06E-44BF-8A9D-D5FF81B0190E</key>
+		<string>ssh://github.com/Ultimedia/Buurtsport.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>watm/platforms/ios/watm.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9BE46582-A06E-44BF-8A9D-D5FF81B0190E</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/Ultimedia/Buurtsport.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9BE46582-A06E-44BF-8A9D-D5FF81B0190E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9BE46582-A06E-44BF-8A9D-D5FF81B0190E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>watm</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -4,6 +4,7 @@
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/res/drawable-ldpi/icon.png \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/res/drawable-mdpi/icon.png \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/res/drawable-xhdpi/icon.png \
+/Users/maartenbressinck/Dropbox/watm/watm/platforms/android/res/values/facebookconnect.xml \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/res/values/strings.xml \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/res/xml/config.xml \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/ant-build/res/drawable/icon.png \
@@ -13,10 +14,12 @@
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/ant-build/res/drawable-xhdpi/icon.png \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/_where-is-www.txt \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www \
+/Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/cdv-plugin-fb-connect.js \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/common \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/cordova.js \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/cordova_plugins.js \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/dindex.html \
+/Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/facebook-js-sdk.js \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/img \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/index.html \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/plugins \
@@ -144,6 +147,7 @@
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/common/img/loading_background.png \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/common/img/logo.png \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/img/logo.png \
+/Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/plugins/com.phonegap.plugins.facebookconnect \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/plugins/org.apache.cordova.camera \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/plugins/org.apache.cordova.device \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/plugins/org.apache.cordova.device-orientation \
@@ -154,6 +158,11 @@
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/plugins/org.apache.cordova.media-capture \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/plugins/org.apache.cordova.network-information \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/plugins/org.apache.cordova.splashscreen \
+/Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/plugins/com.phonegap.plugins.facebookconnect/www \
+/Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/plugins/com.phonegap.plugins.facebookconnect/www/phonegap \
+/Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/plugins/com.phonegap.plugins.facebookconnect/www/phonegap/plugin \
+/Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/plugins/com.phonegap.plugins.facebookconnect/www/phonegap/plugin/facebookConnectPlugin \
+/Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/plugins/com.phonegap.plugins.facebookconnect/www/phonegap/plugin/facebookConnectPlugin/facebookConnectPlugin.js \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/plugins/org.apache.cordova.camera/www \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/plugins/org.apache.cordova.camera/www/Camera.js \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/plugins/org.apache.cordova.camera/www/CameraConstants.js \
@@ -233,8 +242,12 @@
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/js/index.js \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/js/main.js \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/js/native.js \
+/Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/js/phonegap \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/js/vendor \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/js/vendor.js \
+/Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/js/phonegap/plugin \
+/Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/js/phonegap/plugin/facebookConnectPlugin \
+/Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/js/phonegap/plugin/facebookConnectPlugin/facebookConnectPlugin.js \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/js/vendor/additional-methods.js \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/js/vendor/backbone.autocomplete.js \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/js/vendor/backbone.js \
@@ -249,6 +262,7 @@
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/js/vendor/facebook-js-sdk-oldddd.js \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/js/vendor/facebook-js-sdk.js \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/js/vendor/facebook.js \
+/Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/js/vendor/ffacebook-js-sdk.js \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/js/vendor/gmap3.min.js \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/js/vendor/handlebars.js \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/js/vendor/jquery.js \

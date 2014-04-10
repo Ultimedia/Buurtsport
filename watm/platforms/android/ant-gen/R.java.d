@@ -4,6 +4,7 @@
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/res/drawable-ldpi/icon.png \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/res/drawable-mdpi/icon.png \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/res/drawable-xhdpi/icon.png \
+/Users/maartenbressinck/Dropbox/watm/watm/platforms/android/res/values/facebookconnect.xml \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/res/values/strings.xml \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/res/xml/config.xml \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/ant-build/res/drawable/icon.png \
