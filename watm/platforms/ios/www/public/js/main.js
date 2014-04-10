@@ -82,8 +82,6 @@ appData.messages.passwordIncorrect = "Je paswoord is niet correct";
 appData.messages.noUser = "Er werd geen gebruiker met dit email adres gevonden, je kan <a href='#createUser'>hier</a> een nieuwe gebruiker aanmaken.";
 
 appData.start = function(nativeApp){
-  alert('starting')
-
   appData.settings.native = nativeApp;
 
   function doOnOrientationChange()
@@ -192,10 +190,9 @@ appData.start = function(nativeApp){
       appData.helpers.phonegapHelper = new appData.views.HelperView();
 
       if(appData.settings.native){
-          alert('native app');
-
           appData.settings.pictureSource = navigator.camera.PictureSourceType;
           appData.settings.destinationType = navigator.camera.DestinationType;
+          
           document.addEventListener("resume", onResumeHandler, false);
           document.addEventListener("offline", deviceOfflineHandler, false);
           document.addEventListener("online", deviceOnlineHandler, false);
@@ -203,16 +200,10 @@ appData.start = function(nativeApp){
           document.addEventListener("hidekeyboard", hideKeyboardHandler, false);
           window.addEventListener('orientationchange', doOnOrientationChange);
 
-          alert(appData.settings.pictureSource);
-
-
           // check to see if there is a working connection
           if(appData.services.utilService.getNetworkConnection()){
-            alert('connecte');
             //appData.services.facebookService.facebookConnect();
           }else{
-            alert('connectenot');
-
             if(window.localStorage.getItem("userModel")){
 
             }else{
@@ -224,7 +215,6 @@ appData.start = function(nativeApp){
           if(window.localStorage.getItem("userModel")){
 
             var localUser = JSON.parse(window.localStorage.getItem("userModel"));
-
             appData.models.userModel = new User(localUser);
             appData.settings.userLoggedIn = true;
 
@@ -244,9 +234,8 @@ appData.start = function(nativeApp){
 
         } else {
           appData.settings.native = false;
-          appData.services.facebookService.facebookConnect();
+          //appData.services.facebookService.facebookConnect();
         }
-
 
         // init backbone
         Backbone.history.start();
@@ -4968,7 +4957,6 @@ appData.services.UtilServices = Backbone.Model.extend({
 			states[Connection.CELL_4G]  = true;
 			states[Connection.CELL]     = true;
 			states[Connection.NONE]     = false;
-
 
 			appData.settings.network = states[networkState];
 		}else{
