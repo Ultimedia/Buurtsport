@@ -9,7 +9,6 @@ appData.services.FacebookServices = Backbone.Model.extend({
 
 	facebookConnect: function(){
 		if(appData.settings.native){
-			alert('conn');
 
 			// connect facebook API for mobile apps
 	        try {

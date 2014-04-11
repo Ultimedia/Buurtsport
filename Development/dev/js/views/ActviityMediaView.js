@@ -123,6 +123,8 @@ appData.views.ActivityMediaView = Backbone.View.extend({
     },
 
     win: function(r) {
+      alert('succes');
+
       Backbone.on('addPhotoToDatabaseHandler', appData.views.ActivityMediaView.addPhotoToDatabaseHandler);
       appData.services.phpService.addPhotoToDatabase(appData.views.ActivityMediaView.uploadedPhotoUrl, appData.views.ActivityMediaView.model.attributes.activity_id);
     },

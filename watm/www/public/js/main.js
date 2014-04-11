@@ -20,7 +20,7 @@ var appData = {
 
 
 // settings
-appData.settings.rootPath = "http://ultimedia.biz/watm/";
+appData.settings.rootPath = "http://localhost/";
 appData.settings.servicePath =  appData.settings.rootPath + "services/";
 appData.settings.imagePath = appData.settings.rootPath + "common/uploads/";
 appData.settings.badgesPath = appData.settings.rootPath + "common/badges/";
@@ -234,7 +234,7 @@ appData.start = function(nativeApp){
 
         } else {
           appData.settings.native = false;
-          //appData.services.facebookService.facebookConnect();
+          appData.services.facebookService.facebookConnect();
         }
 
         // init backbone
@@ -1029,6 +1029,8 @@ appData.views.ActivityMediaView = Backbone.View.extend({
     },
 
     win: function(r) {
+      alert('succes');
+
       Backbone.on('addPhotoToDatabaseHandler', appData.views.ActivityMediaView.addPhotoToDatabaseHandler);
       appData.services.phpService.addPhotoToDatabase(appData.views.ActivityMediaView.uploadedPhotoUrl, appData.views.ActivityMediaView.model.attributes.activity_id);
     },
@@ -4098,7 +4100,6 @@ appData.services.FacebookServices = Backbone.Model.extend({
 
 	facebookConnect: function(){
 		if(appData.settings.native){
-			alert('conn');
 
 			// connect facebook API for mobile apps
 	        try {

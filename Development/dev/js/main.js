@@ -20,7 +20,7 @@ var appData = {
 
 
 // settings
-appData.settings.rootPath = "http://ultimedia.biz/watm/";
+appData.settings.rootPath = "http://localhost/";
 appData.settings.servicePath =  appData.settings.rootPath + "services/";
 appData.settings.imagePath = appData.settings.rootPath + "common/uploads/";
 appData.settings.badgesPath = appData.settings.rootPath + "common/badges/";
@@ -234,7 +234,7 @@ appData.start = function(nativeApp){
 
         } else {
           appData.settings.native = false;
-          //appData.services.facebookService.facebookConnect();
+          appData.services.facebookService.facebookConnect();
         }
 
         // init backbone
