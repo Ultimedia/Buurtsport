@@ -20,7 +20,7 @@ var appData = {
 
 
 // settings
-appData.settings.rootPath = "http://localhost/";
+appData.settings.rootPath = "http://ultimedia.biz/watm/";
 appData.settings.servicePath =  appData.settings.rootPath + "services/";
 appData.settings.imagePath = appData.settings.rootPath + "common/uploads/";
 appData.settings.badgesPath = appData.settings.rootPath + "common/badges/";
@@ -929,14 +929,18 @@ appData.views.ActivityMediaView = Backbone.View.extend({
       appData.views.ActivityDetailView.model.attributes.media.each(function(mediaModel) {
 
           var mediaUser = appData.collections.users.where({user_id:mediaModel.attributes.user_id});
+            if(mediaUser){
+
               mediaUser = mediaUser[0];
+              
               mediaModel.attributes.userModel = mediaUser.attributes;
               mediaModel.attributes.url = mediaModel.attributes.url;
               mediaModel.attributes.imagePath = appData.settings.imagePath;
 
-          appData.views.ActivityDetailView.mediaListView.push(new appData.views.ActivityMediaViewer({
-            model : mediaModel
-          }));
+            appData.views.ActivityDetailView.mediaListView.push(new appData.views.ActivityMediaViewer({
+              model : mediaModel
+            }));
+          }
       });
 
       $('#mediaContenList', appData.settings.currentModuleHTML).empty();
@@ -992,7 +996,6 @@ appData.views.ActivityMediaView = Backbone.View.extend({
       Backbone.off('fileUploadedEvent');
       
       var filename = data.files[0].replace(/^.*[\\\/]/, '');
-      console.log(filename);
 
       Backbone.on('addPhotoToDatabaseHandler', appData.views.ActivityMediaView.addPhotoToDatabaseHandler);
       appData.services.phpService.addPhotoToDatabase(filename, appData.views.ActivityMediaView.model.attributes.activity_id);
@@ -1029,7 +1032,6 @@ appData.views.ActivityMediaView = Backbone.View.extend({
     },
 
     win: function(r) {
-      alert('succes');
 
       Backbone.on('addPhotoToDatabaseHandler', appData.views.ActivityMediaView.addPhotoToDatabaseHandler);
       appData.services.phpService.addPhotoToDatabase(appData.views.ActivityMediaView.uploadedPhotoUrl, appData.views.ActivityMediaView.model.attributes.activity_id);
@@ -4632,6 +4634,9 @@ appData.services.PhpServices = Backbone.Model.extend({
 			dataType:'json',
 			data: "url="+imageName+"&user_id="+appData.models.userModel.attributes.user_id+"&type="+1+"&activity_id="+activity_id,
 			success:function(data){
+				alert(imageName);
+				alert(activity_id);
+
         		Backbone.trigger('addPhotoToDatabaseHandler');
 				appData.services.avatarService.addScore("media");
 			}

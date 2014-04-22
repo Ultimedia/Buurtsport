@@ -371,6 +371,9 @@ appData.services.PhpServices = Backbone.Model.extend({
 			dataType:'json',
 			data: "url="+imageName+"&user_id="+appData.models.userModel.attributes.user_id+"&type="+1+"&activity_id="+activity_id,
 			success:function(data){
+				alert(imageName);
+				alert(activity_id);
+
         		Backbone.trigger('addPhotoToDatabaseHandler');
 				appData.services.avatarService.addScore("media");
 			}
