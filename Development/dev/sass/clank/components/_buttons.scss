@@ -149,6 +149,8 @@
   }
 }
 
+
+
 .cl-btn-toolbar.float {
   display: block;
   @include pie-clearfix;
@@ -291,10 +293,14 @@
 
 .cl-btn.flat-green{
   background: #4cd6d1 !important;
-  border: 1px solid #378488; 
   color: #252d34;
   width: auto; 
   font-size: 11px;
+}
+
+.cl-btn.btn-small{
+  width: 40%;
+  display: inline-block;
 }
 
 

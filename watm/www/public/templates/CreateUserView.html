@@ -34,7 +34,13 @@
 
 
 	<form class="cl-form padded" id="createUserForm" action="javascript:;">
-		<input type="email" name="email" placeholder="Email adres" id="emailInput" required/>
+    <h4>Leeftijd</h4>
+    <span id="range" class="hide"></span>
+    <input type="range" min="8" max="60" name="age" value="0" id="ageSlider" required/>
+
+    <hr/>
+
+    <input type="email" name="email" placeholder="Email adres" id="emailInput" required/>
 
     <hr/>
 
@@ -56,14 +62,7 @@
        <label for="sex-0" class="">
        <input type="radio" id="sex-0" name="genderradios">Vrouw</label>
     </div>
-
-    <h4>Leeftijd</h4>
-    <span id="range" class="hide"></span>
-    <input type="range" min="8" max="60" name="age" value="0" id="ageSlider" required/>
-
-    <hr/>
 	</form>
-
 
   </div>
    <div class="button-container">

@@ -1,5 +1,135 @@
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/ant-build/watm.ap_ \
- : /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/res/drawable/icon.png \
+ : /Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_button_blue.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_button_blue_focused.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_button_blue_normal.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_button_blue_pressed.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_button_check.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_button_check_off.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_button_check_on.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_button_grey_focused.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_button_grey_normal.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_button_grey_pressed.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_close.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_inverse_icon.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_list_divider.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_list_section_header_background.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_loginbutton_silver.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_logo.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_picker_item_background.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_picker_list_focused.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_picker_list_longpressed.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_picker_list_pressed.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_picker_list_selector.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_picker_list_selector_background_transition.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_picker_list_selector_disabled.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_picker_top_button.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_place_default_icon.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_profile_default_icon.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_profile_picture_blank_portrait.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_profile_picture_blank_square.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_top_background.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_top_button.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable/com_facebook_usersettingsfragment_background_gradient.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable-hdpi/com_facebook_button_blue_focused.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable-hdpi/com_facebook_button_blue_normal.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable-hdpi/com_facebook_button_blue_pressed.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable-hdpi/com_facebook_button_grey_focused.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable-hdpi/com_facebook_button_grey_normal.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable-hdpi/com_facebook_button_grey_pressed.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable-hdpi/com_facebook_close.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable-hdpi/com_facebook_inverse_icon.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable-hdpi/com_facebook_logo.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable-hdpi/com_facebook_picker_magnifier.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable-ldpi/com_facebook_close.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable-mdpi/com_facebook_button_blue_focused.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable-mdpi/com_facebook_button_blue_normal.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable-mdpi/com_facebook_button_blue_pressed.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable-mdpi/com_facebook_inverse_icon.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable-mdpi/com_facebook_picker_magnifier.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable-xhdpi/com_facebook_button_blue_focused.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable-xhdpi/com_facebook_button_blue_normal.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable-xhdpi/com_facebook_button_blue_pressed.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable-xhdpi/com_facebook_button_grey_focused.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable-xhdpi/com_facebook_button_grey_normal.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable-xhdpi/com_facebook_button_grey_pressed.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable-xhdpi/com_facebook_close.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable-xhdpi/com_facebook_inverse_icon.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable-xhdpi/com_facebook_logo.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/drawable-xhdpi/com_facebook_picker_magnifier.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/layout/com_facebook_friendpickerfragment.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/layout/com_facebook_login_activity_layout.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/layout/com_facebook_picker_activity_circle_row.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/layout/com_facebook_picker_checkbox.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/layout/com_facebook_picker_image.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/layout/com_facebook_picker_list_row.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/layout/com_facebook_picker_list_section_header.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/layout/com_facebook_picker_search_box.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/layout/com_facebook_picker_title_bar.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/layout/com_facebook_picker_title_bar_stub.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/layout/com_facebook_placepickerfragment.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/layout/com_facebook_placepickerfragment_list_row.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/layout/com_facebook_search_bar_layout.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/layout/com_facebook_usersettingsfragment.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/values/attrs.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/values/colors.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/values/drawables.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/values/strings.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/values/styles.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/values-es/strings.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/values-hdpi/dimens.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/values-he/strings.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/values-iw/strings.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/values-ldpi/dimens.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/values-mdpi/dimens.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/res/values-xhdpi/dimens.xml \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable/com_facebook_button_blue_focused.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable/com_facebook_button_blue_normal.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable/com_facebook_button_blue_pressed.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable/com_facebook_button_check_off.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable/com_facebook_button_check_on.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable/com_facebook_button_grey_focused.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable/com_facebook_button_grey_normal.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable/com_facebook_button_grey_pressed.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable/com_facebook_close.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable/com_facebook_inverse_icon.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable/com_facebook_list_divider.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable/com_facebook_list_section_header_background.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable/com_facebook_logo.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable/com_facebook_picker_list_focused.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable/com_facebook_picker_list_longpressed.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable/com_facebook_picker_list_pressed.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable/com_facebook_picker_list_selector_disabled.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable/com_facebook_place_default_icon.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable/com_facebook_profile_default_icon.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable/com_facebook_profile_picture_blank_portrait.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable/com_facebook_profile_picture_blank_square.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable-hdpi/com_facebook_button_blue_focused.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable-hdpi/com_facebook_button_blue_normal.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable-hdpi/com_facebook_button_blue_pressed.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable-hdpi/com_facebook_button_grey_focused.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable-hdpi/com_facebook_button_grey_normal.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable-hdpi/com_facebook_button_grey_pressed.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable-hdpi/com_facebook_close.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable-hdpi/com_facebook_inverse_icon.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable-hdpi/com_facebook_logo.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable-hdpi/com_facebook_picker_magnifier.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable-ldpi/com_facebook_close.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable-mdpi/com_facebook_button_blue_focused.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable-mdpi/com_facebook_button_blue_normal.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable-mdpi/com_facebook_button_blue_pressed.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable-mdpi/com_facebook_inverse_icon.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable-mdpi/com_facebook_picker_magnifier.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable-xhdpi/com_facebook_button_blue_focused.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable-xhdpi/com_facebook_button_blue_normal.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable-xhdpi/com_facebook_button_blue_pressed.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable-xhdpi/com_facebook_button_grey_focused.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable-xhdpi/com_facebook_button_grey_normal.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable-xhdpi/com_facebook_button_grey_pressed.9.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable-xhdpi/com_facebook_close.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable-xhdpi/com_facebook_inverse_icon.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable-xhdpi/com_facebook_logo.png \
+/Users/maartenbressinck/phonegap-facebook-plugin-master 4/src/android/facebook/FacebookLib/bin/res/drawable-xhdpi/com_facebook_picker_magnifier.png \
+/Users/maartenbressinck/Dropbox/watm/watm/platforms/android/res/drawable/icon.png \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/res/drawable-hdpi/icon.png \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/res/drawable-ldpi/icon.png \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/res/drawable-mdpi/icon.png \
@@ -228,6 +358,7 @@
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/css/clank.css \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/css/entypo.css \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/css/assets/add-icon@x2.png \
+/Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/css/assets/add-sport-icon@x2.png \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/css/assets/cursor-icon@x2.png \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/css/assets/friend-icon@x2.png \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/css/assets/fullscreen-icon@x2.png \
@@ -262,6 +393,7 @@
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/js/vendor/facebook-js-sdk-old.js \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/js/vendor/facebook-js-sdk-oldddd.js \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/js/vendor/facebook-js-sdk.js \
+/Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/js/vendor/facebook-js-sdkk.js \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/js/vendor/facebook.js \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/js/vendor/ffacebook-js-sdk.js \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/public/js/vendor/gmap3.min.js \
@@ -357,6 +489,7 @@
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/services/handleInvitation.php \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/services/inviteFriends.php \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/services/joinChallenge.php \
+/Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/services/picture2.jpg \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/services/removeActivity.php \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/services/removeChallenge.php \
 /Users/maartenbressinck/Dropbox/watm/watm/platforms/android/assets/www/services/removeFriend.php \

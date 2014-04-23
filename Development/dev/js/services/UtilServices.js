@@ -109,7 +109,6 @@ appData.services.UtilServices = Backbone.Model.extend({
 		appData.collections.sports = new SportsCollection(dataObject.sports);
 		appData.collections.users = new UsersCollection(dataObject.users);
 
-		alert('hierrr');
 
 		appData.settings.dataLoaded = true;
 
@@ -128,7 +127,6 @@ appData.services.UtilServices = Backbone.Model.extend({
 	    }());
 
 		if(hasStorage){
-
         	window.localStorage.setItem("collections", JSON.stringify(appData.collections));
         	window.localStorage.setItem("userModel", JSON.stringify(appData.models.userModel));
 		}

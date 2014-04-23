@@ -113,9 +113,7 @@ appData.services.PhpServices = Backbone.Model.extend({
 						appData.models.userModel.attributes.stamina_score = data.stamina_score;
 						appData.models.userModel.attributes.equipment_score = data.equipment_score;
 						appData.models.userModel.attributes.avatar = data.avatar;
-						appData.models.userModel.attributes.avatar = data.age;
-
-						console.log(data);
+						appData.models.userModel.attributes.age = data.age;
 
 						appData.settings.userLoggedIn = true;
 						appData.events.userLoggedInEvent.trigger("userLoggedInHandler");
@@ -262,6 +260,8 @@ appData.services.PhpServices = Backbone.Model.extend({
 			dataType:'json',
 			success:function(data){
 				appData.collections.users = new UsersCollection(data);
+				console.log(appData.collections.users);
+
          		appData.events.getUsersSuccesEvent.trigger("usersLoadedHandler");
 			}
 		});

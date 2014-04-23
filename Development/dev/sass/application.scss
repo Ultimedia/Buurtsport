@@ -253,7 +253,7 @@ ul.autocomplete {
 ul.autocomplete li {
     list-style: none;
     margin: 0;
-    padding: 5px 7px;
+    padding: 12px 7px;
 }
 
 ul.autocomplete li.active, ul.autocomplete li:hover {
@@ -432,7 +432,7 @@ input.error{
       background:url('assets/speech-icon@x2.png') no-repeat 10px 12px / 15px 15px;
     }
 
-    #passwordInput{
+    #passwordInput, #passwordValidateInput{
       height: auto;
       padding: 12px 0 12px 34px;
     }
@@ -875,24 +875,26 @@ input.error{
 .cl-content{
   padding: 0;
   height: calc(100% - 74px);
+  background: #2f404b;
 
   h4{
     text-align: center;
+  }
 
+  h2{
+    font-size: 1.2em;
+    color: #fff;
   }
 
   li{
     padding: 15px 10px;
   }
-  li:nth-child(odd){
-    background: #72848f;
-  }
 
-
-    #favouriteSportList{
+    #favouriteSportSection{
       width: 100%;
       overflow: auto;
       padding-bottom: 10px;
+      background: #72848f;
 
       div{
         float: left;
@@ -923,20 +925,40 @@ input.error{
           position: relative;
           color: #fff;
         }
+
+        a.sportselector-btn{
+          background: #4cd6d1 url("assets/add-sport-icon@x2.png") no-repeat center center/18px 18px;
+        }
       }
     }
 
     #avatarSection{
+      padding-top: 20px;
       margin-bottom: 10px;
       overflow: auto;
       clear: both;
 
+      .center{
+        text-align:center;
+        display: block;
+        padding: 10px 0;
+      }
+
       #userAvatar{
         width: 120px;
         height: 120px;
-        display: inline-block;
-        border-radius: 60px;
-        float: left;
+        display: block;
+        border-radius: 80px;
+        margin: 0 auto;
+        border: 1px solid #f4f4f4;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      h2{
+        display: block;
+        text-align: center;
+        padding: 5px 0;
       }
 
       #avatarFunctionality{
@@ -945,13 +967,7 @@ input.error{
         margin-left: 20px;
       }
     }
-
-    #signOutButton{
-      clear: both;
-      margin: 0;
-    }
   }
-
 }
 
 /**

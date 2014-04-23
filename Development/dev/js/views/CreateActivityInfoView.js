@@ -28,19 +28,23 @@ appData.views.CreateActivityInfoView = Backbone.View.extend({
             $('#omschrijvingInput', appData.settings.currentModuleHTML).val(appData.views.ActivityDetailView.model.attributes.description);
           
             var dateObject = new Date(appData.views.ActivityDetailView.model.attributes.savedDate);
-
-              console.log(dateObject);
             $('#wanneerInput', appData.settings.currentModuleHTML).val(dateObject.toDateInputValue());
-
-            // find out how to make dates
-
       }
 
       return this; 
     },
 
     events:{
-      "change #participantsSlider": "participantsSliderHandler"
+      "change #participantsSlider": "participantsSliderHandler",
+      "change #vanInput": "timeChangeHandler"
+    },
+
+    timeChangeHandler: function(){
+      var input = $('#vanInput', appData.settings.currentModuleHTML).val();
+
+      // automatically add one hour 
+      var res = input.split(":");
+      $('#totInput', appData.settings.currentModuleHTML).val((parseInt(res[0]) + 1) + ":" + res[1]);
     },
 
     participantsSliderHandler: function(){

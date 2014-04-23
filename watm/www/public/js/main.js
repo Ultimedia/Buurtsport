@@ -202,7 +202,7 @@ appData.start = function(nativeApp){
 
           // check to see if there is a working connection
           if(appData.services.utilService.getNetworkConnection()){
-            //appData.services.facebookService.facebookConnect();
+            appData.services.facebookService.facebookConnect();
           }else{
             if(window.localStorage.getItem("userModel")){
 
@@ -1142,19 +1142,23 @@ appData.views.CreateActivityInfoView = Backbone.View.extend({
             $('#omschrijvingInput', appData.settings.currentModuleHTML).val(appData.views.ActivityDetailView.model.attributes.description);
           
             var dateObject = new Date(appData.views.ActivityDetailView.model.attributes.savedDate);
-
-              console.log(dateObject);
             $('#wanneerInput', appData.settings.currentModuleHTML).val(dateObject.toDateInputValue());
-
-            // find out how to make dates
-
       }
 
       return this; 
     },
 
     events:{
-      "change #participantsSlider": "participantsSliderHandler"
+      "change #participantsSlider": "participantsSliderHandler",
+      "change #vanInput": "timeChangeHandler"
+    },
+
+    timeChangeHandler: function(){
+      var input = $('#vanInput', appData.settings.currentModuleHTML).val();
+
+      // automatically add one hour 
+      var res = input.split(":");
+      $('#totInput', appData.settings.currentModuleHTML).val((parseInt(res[0]) + 1) + ":" + res[1]);
     },
 
     participantsSliderHandler: function(){
@@ -2112,18 +2116,10 @@ appData.views.FavouriteSportListView = Backbone.View.extend({
     }, 
 
     render: function() { 
-
     	this.model.attributes.path = appData.settings.sportsPath;
 
-
-
     	// model to template
-    	this.$el.html(this.template(this.model.toJSON()));
-
-    	$('a',this.$el).css({
-    		'background-image': 'url(' + appData.settings.sportsPath + this.model.attributes.icon + ')',
-    		"background-repeat": 'no-repeat'
-    	});
+    	this.$el.html(this.template({ data: this.model.toJSON(), icon: this.model.attributes.icon, path: appData.settings.sportsPath }));
         return this; 
     }
 
@@ -3336,6 +3332,7 @@ appData.views.SettingsView = Backbone.View.extend({
     	appData.views.SettingsView.avatarUploadHandler = this.avatarUploadHandler;
     	appData.views.SettingsView.avatarUpdatedHandler = this.avatarUpdatedHandler;
       appData.views.SettingsView.fileUploadedHandler = this.fileUploadedHandler;
+      appData.views.SettingsView.generateFavouriteSportList = this.generateFavouriteSportList;
 
       Backbone.on('networkFoundEvent', this.networkFoundHandler);
       Backbone.on('networkLostEvent', this.networkLostHandler);
@@ -3352,9 +3349,6 @@ appData.views.SettingsView = Backbone.View.extend({
     },
 
     render: function () {
-    	console.log(appData.models.userModel.attributes);
-
-
       this.$el.html(this.template({imagePath: appData.settings.imagePath, user: appData.models.userModel.attributes}));
       appData.settings.currentPageHTML = this.$el;
 
@@ -3367,21 +3361,29 @@ appData.views.SettingsView = Backbone.View.extend({
         });
       }
 
-      this.generateFavouriteSportList();
+      // get sports
+      if(appData.settings.native == false || appData.settings.native && appData.services.utilService.getNetworkConnection()){
+        Backbone.on('getMyFavouriteSportsHandler', this.getFavouriteSportsHandler)
+        appData.services.phpService.getUserFavouriteSports();
+      }
 
       return this;
+    },
+
+    getFavouriteSportsHandler: function(){
+      Backbone.off('getMyFavouriteSportsHandler');
+      appData.views.SettingsView.generateFavouriteSportList();
     },
 
     generateFavouriteSportList: function(){
 
       var sports = [];
-      $('#favouriteSportList', appData.settings.currentPageHTML).empty();
+      $('#favouriteSportList .rm', appData.settings.currentPageHTML).remove();
 
       _(appData.models.userModel.attributes.myFavouriteSports.models).each(function(sport){
         var sportView = new appData.views.FavouriteSportListView({model:sport});
-        $('#favouriteSportList', appData.settings.currentPageHTML).append(sportView.render().$el);
+        $('#favouriteSportList', appData.settings.currentPageHTML).prepend(sportView.render().$el);
       });
-
     },
 
     mediaFormSubmitHandler: function(event){
@@ -3421,7 +3423,13 @@ appData.views.SettingsView = Backbone.View.extend({
     	"click #changeAvatar": "changeAvatarHandler",
       "click #signOutButton": "signOutHandler",
       "change #nonNativeFileField":"nonNativeFileSelectedHandler",
-      "submit #mediaForm": "mediaFormSubmitHandler"
+      "submit #mediaForm": "mediaFormSubmitHandler",
+      "click #sportselector": "sportselectorClickHandler"
+    },
+
+    sportselectorClickHandler: function(){
+      appData.settings.sportselector = true;
+      window.location.hash = "sportselector";
     },
 
     signOutHandler: function(){
@@ -3439,15 +3447,18 @@ appData.views.SettingsView = Backbone.View.extend({
     avatarUpdatedHandler: function(){
     	Backbone.off('updateUserAvatar');
       $('#userAvatar', appData.settings.currentPageHTML).delay(400).attr("style", "background: url('" + appData.settings.imagePath + appData.views.SettingsView.uploadedPhotoUrl + "') no-repeat; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;");
+      appData.models.userModel.attributes.avatar = appData.views.SettingsView.uploadedPhotoUrl;
+    
+      if(appData.settings.native){
+        appData.services.utilService.updateLocalStorage();
+      }
     },
 
     changeAvatarHandler: function(){
-
   		navigator.camera.getPicture(this.uploadAvatar,
   			function(message) { 
   			},{ quality: 50, targetWidth: 640, targetHeight: 480, destinationType: navigator.camera.DestinationType.FILE_URI, sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY }
   		);
-    	// change avatar
     },
 
     avatarUploadHandler: function(r){
@@ -3463,7 +3474,6 @@ appData.views.SettingsView = Backbone.View.extend({
 
           for( var i=0; i < 5; i++ )
               text += possible.charAt(Math.floor(Math.random() * possible.length));
-
           return text;
       }
 
@@ -3569,8 +3579,13 @@ appData.views.SportSelectorView = Backbone.View.extend({
 
     addFavouriteSportsHandler: function(){
         appData.services.utilService.updateLocalStorage();
-        appData.router.navigate('dashboard', true);
 
+       if(!appData.settings.sportselector){
+         appData.router.navigate('dashboard', true);
+       }else{
+         appData.settings.sportselector = false;
+         appData.router.navigate('settings', true);
+       }
     }
 });
 
@@ -3947,7 +3962,6 @@ appData.services.AvatarService = Backbone.Model.extend({
 
 			break;
 		}
-		console.log(avatarModel);
 
 		return avatarModel;
 	}
@@ -4376,9 +4390,7 @@ appData.services.PhpServices = Backbone.Model.extend({
 						appData.models.userModel.attributes.stamina_score = data.stamina_score;
 						appData.models.userModel.attributes.equipment_score = data.equipment_score;
 						appData.models.userModel.attributes.avatar = data.avatar;
-						appData.models.userModel.attributes.avatar = data.age;
-
-						console.log(data);
+						appData.models.userModel.attributes.age = data.age;
 
 						appData.settings.userLoggedIn = true;
 						appData.events.userLoggedInEvent.trigger("userLoggedInHandler");
@@ -4525,6 +4537,8 @@ appData.services.PhpServices = Backbone.Model.extend({
 			dataType:'json',
 			success:function(data){
 				appData.collections.users = new UsersCollection(data);
+				console.log(appData.collections.users);
+
          		appData.events.getUsersSuccesEvent.trigger("usersLoadedHandler");
 			}
 		});
@@ -5050,7 +5064,6 @@ appData.services.UtilServices = Backbone.Model.extend({
 		appData.collections.sports = new SportsCollection(dataObject.sports);
 		appData.collections.users = new UsersCollection(dataObject.users);
 
-		alert('hierrr');
 
 		appData.settings.dataLoaded = true;
 
@@ -5069,7 +5082,6 @@ appData.services.UtilServices = Backbone.Model.extend({
 	    }());
 
 		if(hasStorage){
-
         	window.localStorage.setItem("collections", JSON.stringify(appData.collections));
         	window.localStorage.setItem("userModel", JSON.stringify(appData.models.userModel));
 		}

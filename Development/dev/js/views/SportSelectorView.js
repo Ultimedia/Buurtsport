@@ -83,7 +83,12 @@ appData.views.SportSelectorView = Backbone.View.extend({
 
     addFavouriteSportsHandler: function(){
         appData.services.utilService.updateLocalStorage();
-        appData.router.navigate('dashboard', true);
 
+       if(!appData.settings.sportselector){
+         appData.router.navigate('dashboard', true);
+       }else{
+         appData.settings.sportselector = false;
+         appData.router.navigate('settings', true);
+       }
     }
 });

@@ -145,7 +145,6 @@ appData.services.AvatarService = Backbone.Model.extend({
 
 			break;
 		}
-		console.log(avatarModel);
 
 		return avatarModel;
 	}

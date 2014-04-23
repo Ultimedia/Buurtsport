@@ -4,6 +4,7 @@ appData.views.SettingsView = Backbone.View.extend({
     	appData.views.SettingsView.avatarUploadHandler = this.avatarUploadHandler;
     	appData.views.SettingsView.avatarUpdatedHandler = this.avatarUpdatedHandler;
       appData.views.SettingsView.fileUploadedHandler = this.fileUploadedHandler;
+      appData.views.SettingsView.generateFavouriteSportList = this.generateFavouriteSportList;
 
       Backbone.on('networkFoundEvent', this.networkFoundHandler);
       Backbone.on('networkLostEvent', this.networkLostHandler);
@@ -20,9 +21,6 @@ appData.views.SettingsView = Backbone.View.extend({
     },
 
     render: function () {
-    	console.log(appData.models.userModel.attributes);
-
-
       this.$el.html(this.template({imagePath: appData.settings.imagePath, user: appData.models.userModel.attributes}));
       appData.settings.currentPageHTML = this.$el;
 
@@ -35,21 +33,29 @@ appData.views.SettingsView = Backbone.View.extend({
         });
       }
 
-      this.generateFavouriteSportList();
+      // get sports
+      if(appData.settings.native == false || appData.settings.native && appData.services.utilService.getNetworkConnection()){
+        Backbone.on('getMyFavouriteSportsHandler', this.getFavouriteSportsHandler)
+        appData.services.phpService.getUserFavouriteSports();
+      }
 
       return this;
+    },
+
+    getFavouriteSportsHandler: function(){
+      Backbone.off('getMyFavouriteSportsHandler');
+      appData.views.SettingsView.generateFavouriteSportList();
     },
 
     generateFavouriteSportList: function(){
 
       var sports = [];
-      $('#favouriteSportList', appData.settings.currentPageHTML).empty();
+      $('#favouriteSportList .rm', appData.settings.currentPageHTML).remove();
 
       _(appData.models.userModel.attributes.myFavouriteSports.models).each(function(sport){
         var sportView = new appData.views.FavouriteSportListView({model:sport});
-        $('#favouriteSportList', appData.settings.currentPageHTML).append(sportView.render().$el);
+        $('#favouriteSportList', appData.settings.currentPageHTML).prepend(sportView.render().$el);
       });
-
     },
 
     mediaFormSubmitHandler: function(event){
@@ -89,7 +95,13 @@ appData.views.SettingsView = Backbone.View.extend({
     	"click #changeAvatar": "changeAvatarHandler",
       "click #signOutButton": "signOutHandler",
       "change #nonNativeFileField":"nonNativeFileSelectedHandler",
-      "submit #mediaForm": "mediaFormSubmitHandler"
+      "submit #mediaForm": "mediaFormSubmitHandler",
+      "click #sportselector": "sportselectorClickHandler"
+    },
+
+    sportselectorClickHandler: function(){
+      appData.settings.sportselector = true;
+      window.location.hash = "sportselector";
     },
 
     signOutHandler: function(){
@@ -107,15 +119,18 @@ appData.views.SettingsView = Backbone.View.extend({
     avatarUpdatedHandler: function(){
     	Backbone.off('updateUserAvatar');
       $('#userAvatar', appData.settings.currentPageHTML).delay(400).attr("style", "background: url('" + appData.settings.imagePath + appData.views.SettingsView.uploadedPhotoUrl + "') no-repeat; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;");
+      appData.models.userModel.attributes.avatar = appData.views.SettingsView.uploadedPhotoUrl;
+    
+      if(appData.settings.native){
+        appData.services.utilService.updateLocalStorage();
+      }
     },
 
     changeAvatarHandler: function(){
-
   		navigator.camera.getPicture(this.uploadAvatar,
   			function(message) { 
   			},{ quality: 50, targetWidth: 640, targetHeight: 480, destinationType: navigator.camera.DestinationType.FILE_URI, sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY }
   		);
-    	// change avatar
     },
 
     avatarUploadHandler: function(r){
@@ -131,7 +146,6 @@ appData.views.SettingsView = Backbone.View.extend({
 
           for( var i=0; i < 5; i++ )
               text += possible.charAt(Math.floor(Math.random() * possible.length));
-
           return text;
       }
 

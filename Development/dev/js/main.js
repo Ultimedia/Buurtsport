@@ -202,7 +202,7 @@ appData.start = function(nativeApp){
 
           // check to see if there is a working connection
           if(appData.services.utilService.getNetworkConnection()){
-            //appData.services.facebookService.facebookConnect();
+            appData.services.facebookService.facebookConnect();
           }else{
             if(window.localStorage.getItem("userModel")){
 
