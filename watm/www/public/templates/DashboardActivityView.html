@@ -15,9 +15,9 @@
             </li>
             <li class="table-friends">
                 <% _.each(friends, function(friend) { %> 
-
-                <span class="avatar" style="background: #f1f1f1 url('<%= imagePath %><%= friend.avatar %>') no-repeat;     -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; "></span>
-
+                    <% if(friend.going == 1) { %> 
+                    <span class="avatar" style="background: #f1f1f1 url('<%= imagePath %><%= friend.avatar %>') no-repeat;     -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; "></span>
+                    <% } %>
                 <% }); %>
             </li>
         </ul>

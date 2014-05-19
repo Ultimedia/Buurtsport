@@ -3,10 +3,10 @@ appData.views.AvatarDisplayView = Backbone.View.extend({
     className: 'avatar-container',
 
     initialize: function () {
-     
+    
     }, 
 
-    render: function() { 
+    render: function() {     
     	this.$el.html(this.template({avatarPath: appData.settings.avatarPath, avatar: this.model.toJSON()}));
     	return this;
     }

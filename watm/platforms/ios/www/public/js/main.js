@@ -390,7 +390,8 @@ User = Backbone.Model.extend({
     	avatar: "default.png",
     	myChallenges: [],
     	myBadges: [],
-    	age: []
+    	age: [],
+    	myFavouriteSports: []
     },
 	initialize: function(){
 		
@@ -699,6 +700,7 @@ appData.views.ActivityInfoView = Backbone.View.extend({
 
         Backbone.on('networkFoundEvent', this.networkFoundHandler);
         Backbone.on('networkLostEvent', this.networkLostHandler);
+
     }, 
 
     // phonegap device online
@@ -780,6 +782,28 @@ appData.views.ActivityInfoView = Backbone.View.extend({
         $('#participantStat').text(appData.views.ActivityInfoView.userListView.length + " / " + appData.views.ActivityDetailView.model.attributes.participants);    
       });
 
+
+
+     // disable options if the activity is full
+     var goingCheck = false;
+     if(goingTo){
+        if(goingTo.attributes.going == 0){
+            goingCheck = false;
+        }else{
+            goingCheck = true;
+        }
+     }
+
+     if(appData.views.ActivityInfoView.userListView.length >= parseInt(appData.views.ActivityDetailView.model.attributes.participants) && !goingCheck){
+        $('#goingList', appData.settings.currentModuleHTML).hide();
+        $('#goingFullMessage', appData.settings.currentModuleHTML).show();
+     }else if(goingTo){
+        $('#goingList', appData.settings.currentModuleHTML).show();
+        $('#goingFullMessage', appData.settings.currentModuleHTML).hide();
+     }else{
+        $('#goingFullMessage', appData.settings.currentModuleHTML).hide();
+        $('#goingList', appData.settings.currentModuleHTML).show();
+     }
     }
 });
 
@@ -1056,10 +1080,10 @@ appData.views.AvatarDisplayView = Backbone.View.extend({
     className: 'avatar-container',
 
     initialize: function () {
-     
+    
     }, 
 
-    render: function() { 
+    render: function() {     
     	this.$el.html(this.template({avatarPath: appData.settings.avatarPath, avatar: this.model.toJSON()}));
     	return this;
     }
@@ -1634,12 +1658,12 @@ appData.views.CreateActivityWieView = Backbone.View.extend({
 appData.views.CreateUserView = Backbone.View.extend({
 
 	initialize: function () {
-        appData.events.createUserEvent.bind("createUserHandler", this.createUserHandler);
         appData.events.createUserErrorEvent.bind("createUserErrorHandler", this.createUserErrorHandler);
         appData.events.locationHomeEvent.bind('locationErrorHandler', this.locationErrorHandler);
         appData.views.CreateUserView.selectedGender = 0;
         appData.views.CreateUserView.locationErrorHandler = this.locationErrorHandler;
         appData.views.CreateUserView.locationSuccesHandler = this.locationSuccesHandler;
+        appData.views.CreateUserView.createUserHandler = this.createUserHandler;
     }, 
 
     render: function() { 
@@ -1682,6 +1706,7 @@ appData.views.CreateUserView = Backbone.View.extend({
     },
 
     createUserHandler: function(){
+        Backbone.off('createUserHandler');
         appData.router.navigate('dashboard', true);
     },
 
@@ -1739,6 +1764,7 @@ appData.views.CreateUserView = Backbone.View.extend({
                     appData.services.utilService.getLocationService("create");
 
                 }else{
+                    Backbone.on('createUserHandler', appData.views.CreateUserView.createUserHandler);
                     appData.services.phpService.createUser();
                 }
 		  	}
@@ -1748,12 +1774,15 @@ appData.views.CreateUserView = Backbone.View.extend({
     locationSuccesHandler: function(location){
         var myLocation = location.coords.latitude + "," + location.coords.longitude;
         appData.models.userModel.attributes.current_location = myLocation;
+        
+        Backbone.on('createUserHandler', appData.views.CreateUserView.createUserHandler);
         appData.services.phpService.createUser();
     },
 
     locationErrorHandler: function(){
-
         Backbone.off('locationError');
+
+        Backbone.on('createUserHandler', appData.views.CreateUserView.createUserHandler);
         appData.services.phpService.createUser();
     }
 });
@@ -1845,6 +1874,7 @@ appData.views.DashboardView = Backbone.View.extend({
     generateAcitvitiesCollection: function(){
         Backbone.off('dashboardUpdatedHandler');
 
+        // show message that no activities have been found
         if(appData.collections.activities.length === 0){
 
 
@@ -2219,20 +2249,25 @@ appData.views.FriendView = Backbone.View.extend({
       Backbone.off('getBadgesHandler');
       
       // generate badges list
-      appData.views.FriendView.model.attributes.badges = new ChallengesCollection(badges);
-      appData.views.FriendView.model.attributes.badges.each(function(badge){
-        var bView = new appData.views.BadgeListView({model: badge});
-        $('#badgesView #badges', appData.settings.currentPageHTML).empty().append(bView.render().$el);
-      });
+        appData.views.FriendView.model.attributes.badges = new ChallengesCollection(badges);
+     
+      if(appData.views.FriendView.model.attributes.badges.length !== 0){
+        appData.views.FriendView.model.attributes.badges.each(function(badge){
+          var bView = new appData.views.BadgeListView({model: badge});
+          $('#badgesView #badges', appData.settings.currentPageHTML).empty().append(bView.render().$el);
+        });
+      }else{
+        $('#badgesView', appData.settings.currentPageHTML).hide();
+      }
     }, 
 
     userMediaRecievedHandler: function(media){
-      console.log(media);
-      Backbone.off('userMediaHandler');
 
       var mediaList = [];
 
       // generate media tiles
+
+      if(media.length !== 0){
       media.each(function(mediaModel) {
 
           mediaModel.attributes.userModel = appData.views.FriendView.model.attributes;
@@ -2247,6 +2282,9 @@ appData.views.FriendView = Backbone.View.extend({
       _(mediaList).each(function(dv) {
           $('#mediaContainer', appData.settings.currentPageHTML).append(dv.render().$el);
       });
+      }else{
+        $('#mediaSection', appData.settings.currentPageHTML).hide();
+      }
     },
 
     events: {
@@ -2537,12 +2575,14 @@ appData.views.LoadingView = Backbone.View.extend({
     render: function() {
         this.$el.html(this.template(this.model.attributes));
     	appData.settings.currentPageHTML = this.$el;
+        alert('jaezffzefee');
 
         // load the data
         appData.services.phpService.getActivities(true);
         return this;
     },
     activitiesLoadedHandler: function(){
+        alert('jaezffzefee');
         appData.services.phpService.getSports();
     },
 
@@ -2608,6 +2648,7 @@ appData.views.LoadingView = Backbone.View.extend({
 
         appData.settings.dataLoaded = true;
         appData.views.LoadingView.destroy_view();
+
 
         if(appData.models.userModel.attributes.myFavouriteSports.length > 0){
             appData.router.navigate('dashboard', true);
@@ -3439,6 +3480,8 @@ appData.views.SettingsView = Backbone.View.extend({
       // not signed in
       appData.settings.userLoggedIn = false;
       appData.settings.storageFound = false;
+      appData.settings.dataLoaded = false;
+
 
       // back to the landing page
       window.location.hash = "#";
@@ -3675,12 +3718,16 @@ appData.routers.AppRouter = Backbone.Router.extend({
     },
     
     dashboard: function () {
+        alert('hier');
         appData.settings.created = false;
         if(appData.settings.userLoggedIn){
+            alert('logged');
 
-            if(appData.settings.dataLoaded){                
+            if(appData.settings.dataLoaded){    
+            alert('data');            
                 appData.slider.slidePage(new appData.views.DashboardView().render().$el);
             }else{
+                alert('loading');
                 window.location.hash = "loading";
             }
         }else{
@@ -4363,13 +4410,15 @@ appData.services.PhpServices = Backbone.Model.extend({
 					appData.settings.userLoggedIn = true;
 					appData.models.userModel.attributes.user_id = data.id;
 
-					appData.events.createUserEvent.trigger("createUserHandler");
+			    	Backbone.trigger('createUserHandler');
 				}else{
 					appData.events.createUserErrorEvent.trigger("createUserErrorHandler");
 				}
 			}
 		});
 	},
+
+
 
   userLogin: function(){
 		$.ajax({

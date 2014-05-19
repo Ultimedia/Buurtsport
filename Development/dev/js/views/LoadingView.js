@@ -34,12 +34,14 @@ appData.views.LoadingView = Backbone.View.extend({
     render: function() {
         this.$el.html(this.template(this.model.attributes));
     	appData.settings.currentPageHTML = this.$el;
+        alert('jaezffzefee');
 
         // load the data
         appData.services.phpService.getActivities(true);
         return this;
     },
     activitiesLoadedHandler: function(){
+        alert('jaezffzefee');
         appData.services.phpService.getSports();
     },
 
@@ -105,6 +107,7 @@ appData.views.LoadingView = Backbone.View.extend({
 
         appData.settings.dataLoaded = true;
         appData.views.LoadingView.destroy_view();
+
 
         if(appData.models.userModel.attributes.myFavouriteSports.length > 0){
             appData.router.navigate('dashboard', true);

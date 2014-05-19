@@ -22,6 +22,7 @@ appData.views.ActivityInfoView = Backbone.View.extend({
 
         Backbone.on('networkFoundEvent', this.networkFoundHandler);
         Backbone.on('networkLostEvent', this.networkLostHandler);
+
     }, 
 
     // phonegap device online
@@ -103,6 +104,28 @@ appData.views.ActivityInfoView = Backbone.View.extend({
         $('#participantStat').text(appData.views.ActivityInfoView.userListView.length + " / " + appData.views.ActivityDetailView.model.attributes.participants);    
       });
 
+
+
+     // disable options if the activity is full
+     var goingCheck = false;
+     if(goingTo){
+        if(goingTo.attributes.going == 0){
+            goingCheck = false;
+        }else{
+            goingCheck = true;
+        }
+     }
+
+     if(appData.views.ActivityInfoView.userListView.length >= parseInt(appData.views.ActivityDetailView.model.attributes.participants) && !goingCheck){
+        $('#goingList', appData.settings.currentModuleHTML).hide();
+        $('#goingFullMessage', appData.settings.currentModuleHTML).show();
+     }else if(goingTo){
+        $('#goingList', appData.settings.currentModuleHTML).show();
+        $('#goingFullMessage', appData.settings.currentModuleHTML).hide();
+     }else{
+        $('#goingFullMessage', appData.settings.currentModuleHTML).hide();
+        $('#goingList', appData.settings.currentModuleHTML).show();
+     }
     }
 });
 

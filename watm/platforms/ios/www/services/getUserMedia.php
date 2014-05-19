@@ -4,7 +4,7 @@
 	$user_id = $_POST["user_id"];
 
 	$dbc = getDBConnection();		
-	$sql = "SELECT * FROM watm_media WHERE user_id =" . $user_id . " ORDER BY created ASC";
+	$sql = "SELECT * FROM watm_media WHERE user_id =" . $user_id . " AND visible = 1 ORDER BY created ASC";
 
 	$result = $dbc->query($sql);
 	$medias = array();

@@ -13,7 +13,8 @@ User = Backbone.Model.extend({
     	avatar: "default.png",
     	myChallenges: [],
     	myBadges: [],
-    	age: []
+    	age: [],
+    	myFavouriteSports: []
     },
 	initialize: function(){
 		

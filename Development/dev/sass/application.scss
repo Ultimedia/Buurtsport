@@ -974,8 +974,14 @@ input.error{
 * Activity Detail
 */
 #activityDetail{
-  
   background: #31424f;
+
+  .cl-message{
+    padding: 10px;
+    background-color: #fef5e4;
+    line-height: 1.6em;
+    margin-bottom: 10px;
+  }
 
   #popover{
 
@@ -1245,6 +1251,7 @@ input.error{
   background: #b04646 !important;
   
   #searchForm input[type=search]{
+    -webkit-appearance: none;
     color: #fff;
     border: 0;
     width: 100%;
@@ -1397,7 +1404,7 @@ input.error{
 
   #avatar{
     text-align: center;
-    padding-top: 20px;
+    padding-top: 40px;
     padding-bottom: 20px;
     .avatar-container{
       #avatarDisplay, #equipmentDisplay{
@@ -1422,6 +1429,7 @@ input.error{
         left: 0;
         background: #ededed;
         z-index: 1;
+        display: none;
       }
     }
   }
@@ -1566,11 +1574,17 @@ input.error{
 */
 #friendView{
   position: relative;
-  height: calc(100% -19px);
+  height: calc(100%-61px);
   
   #friendAddContainer{
     padding: 10px;
     clear: both;
+  }
+
+  #avatarView{
+    #barContainer{
+      display: none;
+    }
   }
 
   #avatarView{
@@ -1615,7 +1629,7 @@ input.error{
   .cl-content{
     padding: 0;
     clear: both;
-    height: calc(100% - 54px);
+    height: calc(100% - 20px);
 
     #mediaContainer{
         .user-box{
@@ -1630,15 +1644,16 @@ input.error{
     }
 
     #avatarView #avatarDisplay{
-      height: 80%;
-      position: absolute;
-      left: 40%;
+      height: 200px;
+      width: auto;
+      margin-left: auto;
+      margin-right: auto;
+      display: bock;
       z-index: 200;
     }
 
     #avatarView #avatar{
       height: auto;
-      bottom: 150px;
       padding: 0;
     }
 
@@ -1646,6 +1661,7 @@ input.error{
       position: absolute;
       height: 100px;
       bottom: 0;
+      display: none;
     }
 
     h3{
@@ -1658,6 +1674,7 @@ input.error{
     }
 
     #mediaContainer{
+      clear: both;
       padding: 0 10px 10px 10px;
 
       img{

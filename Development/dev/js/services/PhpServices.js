@@ -86,13 +86,15 @@ appData.services.PhpServices = Backbone.Model.extend({
 					appData.settings.userLoggedIn = true;
 					appData.models.userModel.attributes.user_id = data.id;
 
-					appData.events.createUserEvent.trigger("createUserHandler");
+			    	Backbone.trigger('createUserHandler');
 				}else{
 					appData.events.createUserErrorEvent.trigger("createUserErrorHandler");
 				}
 			}
 		});
 	},
+
+
 
   userLogin: function(){
 		$.ajax({

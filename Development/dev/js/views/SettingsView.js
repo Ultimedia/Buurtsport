@@ -111,6 +111,8 @@ appData.views.SettingsView = Backbone.View.extend({
       // not signed in
       appData.settings.userLoggedIn = false;
       appData.settings.storageFound = false;
+      appData.settings.dataLoaded = false;
+
 
       // back to the landing page
       window.location.hash = "#";

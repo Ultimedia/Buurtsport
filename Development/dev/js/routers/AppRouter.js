@@ -83,12 +83,16 @@ appData.routers.AppRouter = Backbone.Router.extend({
     },
     
     dashboard: function () {
+        alert('hier');
         appData.settings.created = false;
         if(appData.settings.userLoggedIn){
+            alert('logged');
 
-            if(appData.settings.dataLoaded){                
+            if(appData.settings.dataLoaded){    
+            alert('data');            
                 appData.slider.slidePage(new appData.views.DashboardView().render().$el);
             }else{
+                alert('loading');
                 window.location.hash = "loading";
             }
         }else{

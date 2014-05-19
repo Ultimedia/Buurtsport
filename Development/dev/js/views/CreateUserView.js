@@ -1,12 +1,12 @@
 appData.views.CreateUserView = Backbone.View.extend({
 
 	initialize: function () {
-        appData.events.createUserEvent.bind("createUserHandler", this.createUserHandler);
         appData.events.createUserErrorEvent.bind("createUserErrorHandler", this.createUserErrorHandler);
         appData.events.locationHomeEvent.bind('locationErrorHandler', this.locationErrorHandler);
         appData.views.CreateUserView.selectedGender = 0;
         appData.views.CreateUserView.locationErrorHandler = this.locationErrorHandler;
         appData.views.CreateUserView.locationSuccesHandler = this.locationSuccesHandler;
+        appData.views.CreateUserView.createUserHandler = this.createUserHandler;
     }, 
 
     render: function() { 
@@ -49,6 +49,7 @@ appData.views.CreateUserView = Backbone.View.extend({
     },
 
     createUserHandler: function(){
+        Backbone.off('createUserHandler');
         appData.router.navigate('dashboard', true);
     },
 
@@ -106,6 +107,7 @@ appData.views.CreateUserView = Backbone.View.extend({
                     appData.services.utilService.getLocationService("create");
 
                 }else{
+                    Backbone.on('createUserHandler', appData.views.CreateUserView.createUserHandler);
                     appData.services.phpService.createUser();
                 }
 		  	}
@@ -115,12 +117,15 @@ appData.views.CreateUserView = Backbone.View.extend({
     locationSuccesHandler: function(location){
         var myLocation = location.coords.latitude + "," + location.coords.longitude;
         appData.models.userModel.attributes.current_location = myLocation;
+        
+        Backbone.on('createUserHandler', appData.views.CreateUserView.createUserHandler);
         appData.services.phpService.createUser();
     },
 
     locationErrorHandler: function(){
-
         Backbone.off('locationError');
+
+        Backbone.on('createUserHandler', appData.views.CreateUserView.createUserHandler);
         appData.services.phpService.createUser();
     }
 });

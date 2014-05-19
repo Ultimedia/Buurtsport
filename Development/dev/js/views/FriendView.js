@@ -53,20 +53,25 @@ appData.views.FriendView = Backbone.View.extend({
       Backbone.off('getBadgesHandler');
       
       // generate badges list
-      appData.views.FriendView.model.attributes.badges = new ChallengesCollection(badges);
-      appData.views.FriendView.model.attributes.badges.each(function(badge){
-        var bView = new appData.views.BadgeListView({model: badge});
-        $('#badgesView #badges', appData.settings.currentPageHTML).empty().append(bView.render().$el);
-      });
+        appData.views.FriendView.model.attributes.badges = new ChallengesCollection(badges);
+     
+      if(appData.views.FriendView.model.attributes.badges.length !== 0){
+        appData.views.FriendView.model.attributes.badges.each(function(badge){
+          var bView = new appData.views.BadgeListView({model: badge});
+          $('#badgesView #badges', appData.settings.currentPageHTML).empty().append(bView.render().$el);
+        });
+      }else{
+        $('#badgesView', appData.settings.currentPageHTML).hide();
+      }
     }, 
 
     userMediaRecievedHandler: function(media){
-      console.log(media);
-      Backbone.off('userMediaHandler');
 
       var mediaList = [];
 
       // generate media tiles
+
+      if(media.length !== 0){
       media.each(function(mediaModel) {
 
           mediaModel.attributes.userModel = appData.views.FriendView.model.attributes;
@@ -81,6 +86,9 @@ appData.views.FriendView = Backbone.View.extend({
       _(mediaList).each(function(dv) {
           $('#mediaContainer', appData.settings.currentPageHTML).append(dv.render().$el);
       });
+      }else{
+        $('#mediaSection', appData.settings.currentPageHTML).hide();
+      }
     },
 
     events: {

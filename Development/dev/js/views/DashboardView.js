@@ -63,6 +63,7 @@ appData.views.DashboardView = Backbone.View.extend({
     generateAcitvitiesCollection: function(){
         Backbone.off('dashboardUpdatedHandler');
 
+        // show message that no activities have been found
         if(appData.collections.activities.length === 0){
 
 
